@@ -13,6 +13,7 @@ setup(
             ['resource/' + package_name]),
         ('share/' + package_name, ['package.xml']),
         (os.path.join('share', package_name), glob('description/urdf/*')),
+        (os.path.join('share', package_name), glob('rviz/*')),
         ('share/' + package_name, glob('launch/*launch.[pxy][yma]*'))
     ],
     install_requires=['setuptools'],
@@ -25,6 +26,9 @@ setup(
     entry_points={
         'console_scripts': [
             'arm = arm_sim.arm:main'
+        ],
+        'console_scripts': [
+            'state_publisher = arm_sim.state_publisher:main'
         ],
     },
 )

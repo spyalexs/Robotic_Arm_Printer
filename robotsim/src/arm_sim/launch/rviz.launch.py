@@ -17,6 +17,11 @@ def generate_launch_description():
     with open(urdf, 'r') as infp:
         robot_desc = infp.read()
 
+    rviz_config_filename = 'rviz_basic_settings'
+    rviz_config_file = os.path.join(
+        get_package_share_directory('arm_sim'),
+        rviz_config_filename)
+
     return LaunchDescription([
         DeclareLaunchArgument(
             'use_sim_time',
@@ -32,8 +37,14 @@ def generate_launch_description():
             arguments=[urdf]),
 
         Node(
-            # condition='True',
-            package='joint_state_publisher',
-            executable='joint_state_publisher',
-            name='joint_state_publisher')
+            package='arm_sim',
+            executable='state_publisher',
+            name='state_publisher',
+            output='screen'),
+
+        Node(package='rviz2',
+             executable='rviz2',
+             name='rviz2',
+             arguments=['-d', rviz_config_file],
+             output='screen')
     ])
