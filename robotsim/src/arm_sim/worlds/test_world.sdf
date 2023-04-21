@@ -224,6 +224,7 @@
           </material>
         </visual>
       </link>
+
       <link name="RR_position_control_link1">
         <pose relative_to="RR_position_control_joint1">0 0 0.1 0 0 0</pose>
         <collision name="RR_position_control_link1_collision_0">
@@ -266,6 +267,7 @@
             <diffuse>0.8 0.8 0.8 1</diffuse>
             <specular>0.8 0.8 0.8 1</specular>
           </material>
+          <transparency>1</transparency>
         </visual>
         <inertial>
           <mass>0.1</mass>
@@ -276,6 +278,7 @@
           </inertia>
         </inertial>
       </link>
+      
       <link name="RR_position_control_link2">
         <pose relative_to="RR_position_control_joint2">0 0 0.1 0 0 0</pose>
         <collision name="RR_position_control_link2_collision">
