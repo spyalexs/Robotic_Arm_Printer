@@ -1,5 +1,10 @@
 from Load_Gcode import Load_GCode 
 from HCode_Point import HCodePoint
+from PointToJointAngles import defineArm
+from Write_Hcode_File import WriteHcode
+import numpy as np
+import math
+
 
 def Parse_Gcode(lines):
     #give lines from loaded gcode
@@ -16,6 +21,14 @@ def Parse_Gcode(lines):
     previous_y = 0
     previous_z = 0
 
+    #remove comment to do only a few lines
+    lines = lines[:5000]
+
+    counter = 0
+    next_increment = 0
+
+    previous_guess = [np.array([2.85927166, 1.06226203, 1.28968131, 3.93090938, 0.28232101, 3.14191207])]
+    screw, home = defineArm()
 
     for line in lines:
         #get command name
@@ -49,12 +62,22 @@ def Parse_Gcode(lines):
                     previous_z = float(component[1:])
 
             #add a point with the updated data 
-            points.append(HCodePoint(previous_x, previous_y, previous_z))
-    
-    print(len(points))
-        
+            points.append(HCodePoint(previous_x, previous_y, previous_z, previous_guess[len(previous_guess) - 1], screw, home))
+            previous_guess.append(np.array(points[len(points) - 1].angles))
+
+        #display perecentage done
+        counter += 1
+        if math.floor(counter / len(lines) *1000) > next_increment:
+            next_increment += 1
+            print(str(counter / len(lines) * 100) + "% Done Converting")
+
+    print("Parsing Completed! - writing file")
+
+    return points
 
 
 if __name__ == "__main__":
     lines = Load_GCode("Test_Part_1")
-    Parse_Gcode(lines)
+    points = Parse_Gcode(lines)
+    WriteHcode(points,"Test_Part_1")     
+
