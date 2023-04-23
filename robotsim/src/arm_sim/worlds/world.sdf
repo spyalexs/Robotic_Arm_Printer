@@ -472,7 +472,7 @@
                 filename="gz-sim-joint-trajectory-controller-system"
                 name="gz::sim::systems::JointTrajectoryController">
                 <joint_name>joint1</joint_name>
-                <initial_position>1.5708</initial_position>
+                <initial_position>0</initial_position>
                 <position_p_gain>300</position_p_gain>
                 <position_i_gain>0.5</position_i_gain>
                 <position_d_gain>0.5</position_d_gain>
@@ -482,7 +482,7 @@
                 <position_cmd_max>20</position_cmd_max>
 
                 <joint_name>joint2</joint_name>
-                <initial_position>-1.5708</initial_position>
+                <initial_position>0</initial_position>
                 <position_p_gain>300</position_p_gain>
                 <position_i_gain>0.2</position_i_gain>
                 <position_d_gain>0.5</position_d_gain>
@@ -492,7 +492,7 @@
                 <position_cmd_max>10</position_cmd_max>
 
                 <joint_name>joint3</joint_name>
-                <initial_position>1.5708</initial_position>
+                <initial_position>0</initial_position>
                 <position_p_gain>300</position_p_gain>
                 <position_i_gain>0.2</position_i_gain>
                 <position_d_gain>0.5</position_d_gain>
@@ -502,7 +502,7 @@
                 <position_cmd_max>10</position_cmd_max>
 
                 <joint_name>joint4</joint_name>
-                <initial_position>1.5708</initial_position>
+                <initial_position>0</initial_position>
                 <position_p_gain>300</position_p_gain>
                 <position_i_gain>0.2</position_i_gain>
                 <position_d_gain>0.5</position_d_gain>
@@ -512,7 +512,7 @@
                 <position_cmd_max>10</position_cmd_max>
 
                 <joint_name>joint5</joint_name>
-                <initial_position>1.5708</initial_position>
+                <initial_position>0</initial_position>
                 <position_p_gain>300</position_p_gain>
                 <position_i_gain>0.2</position_i_gain>
                 <position_d_gain>0.5</position_d_gain>
@@ -522,7 +522,7 @@
                 <position_cmd_max>10</position_cmd_max>
 
                 <joint_name>joint6</joint_name>
-                <initial_position>.7854</initial_position>
+                <initial_position>0</initial_position>
                 <position_p_gain>300</position_p_gain>
                 <position_i_gain>0.2</position_i_gain>
                 <position_d_gain>0.5</position_d_gain>

@@ -32,11 +32,11 @@ class posePublisher(Node):
         curS = 0
         for line in f:
             jointPos = JointTrajectoryPoint()
-            jointPos.positions = [float(i) for i in line.split()]
+            jointPos.positions = [float(i) for i in line[0:line.index('#')].split()]
             jointPos.time_from_start.sec = curS
             jointPos.time_from_start.nanosec = curNs
             points.append(jointPos)
-            if curS + 100000000 == 1e9:
+            if curNs + 100000000 >= 1e9:
                 curS += 1
                 curNs = 0
             else:
@@ -44,10 +44,10 @@ class posePublisher(Node):
         return points
 
     def sendGoal(self, points):
+        self.get_logger().info(str(len(points)))
         out_msg = JointTrajectory()
         out_msg.joint_names = ['joint1', 'joint2', 'joint3', 'joint4', 'joint5', 'joint6']
-        print(type(points[0,0]))
-        out_msg.points = [float(i) for i in points]
+        out_msg.points = points
         self.posPub.publish(out_msg)
 
 def main(args=None):
