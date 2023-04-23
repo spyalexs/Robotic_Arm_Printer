@@ -28,6 +28,7 @@ def Parse_Gcode(lines):
     next_increment = 0
 
     previous_guess = [np.array([2.85927166, 1.06226203, 1.28968131, 3.93090938, 0.28232101, 3.14191207])]
+    previous_time = 0 # keep rolling time
     screw, home = defineArm()
 
     for line in lines:
@@ -62,8 +63,9 @@ def Parse_Gcode(lines):
                     previous_z = float(component[1:])
 
             #add a point with the updated data 
-            points.append(HCodePoint(previous_x, previous_y, previous_z, previous_guess[len(previous_guess) - 1], screw, home))
+            points.append(HCodePoint(previous_x, previous_y, previous_z, previous_guess[len(previous_guess) - 1], screw, home, previous_time))
             previous_guess.append(np.array(points[len(points) - 1].angles))
+            previous_time = points[len(points) - 1].movement_time
 
         #display perecentage done
         counter += 1

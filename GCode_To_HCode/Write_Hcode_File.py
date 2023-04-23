@@ -35,6 +35,7 @@ def WriteHcode(points, filename):
                     str(point.location[2]) + " " +  
                     str(point.location[3]) + " " +  
                     str(point.location[4]) + " " +  
-                    str(point.location[5]) + "\n")
+                    str(point.location[5]) + "#time#" +
+                    str(point.movement_time) + "\n")
 
     file.close()
