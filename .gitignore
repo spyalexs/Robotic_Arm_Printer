@@ -1,3 +1,5 @@
 robotsim/build/*
 robotsim/install/*
 robotsim/log/*
+
+**/*.pyc
