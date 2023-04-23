@@ -25,7 +25,10 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'arm = arm_sim.arm:main', 'state_publisher = arm_sim.state_publisher:main'
+            'follow_gcode = arm_sim.publish_pos:main', 'launch_sim = arm_sim.launch_arm:launchGazebo',
         ]
     },
+    py_modules=[
+        'arm_sim.gazeboControl',
+    ]
 )
