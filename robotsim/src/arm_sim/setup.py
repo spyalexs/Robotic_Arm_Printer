@@ -15,6 +15,7 @@ setup(
         ('share/' + package_name, glob('description/urdf/*')),
         ('share/' + package_name, glob('launch/*launch.[pxy][yma]*')),
         ('share/' + package_name, glob('worlds/*')),
+        ('share/' + package_name, glob('hcode/*')),
     ],
     install_requires=['setuptools'],
     zip_safe=True,
