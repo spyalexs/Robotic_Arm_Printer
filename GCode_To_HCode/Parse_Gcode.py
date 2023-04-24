@@ -22,7 +22,7 @@ def Parse_Gcode(lines):
     previous_z = 0
 
     #remove comment to do only a few lines
-    lines = lines[:5000]
+    #lines = lines[:5000]
 
     counter = 0
     next_increment = 0
@@ -75,8 +75,8 @@ def Parse_Gcode(lines):
 
     print("Parsing Completed! - writing file")
 
-    return points
-
+    #removing first few lines to aviod purge
+    return points[10:]
 
 if __name__ == "__main__":
     lines = Load_GCode("Test_Part_1")
