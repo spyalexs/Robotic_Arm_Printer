@@ -159,7 +159,7 @@
                     <transparency>0.5</transparency>
                 </visual>
                 <inertial>
-                    <mass>0</mass>
+                    <mass>0.00001</mass>
                     <inertia>
                         <ixx>0.0003358</ixx>
                         <iyy>0.0003358</iyy>
@@ -213,7 +213,7 @@
                     <transparency>0.5</transparency>
                 </visual>
                 <inertial>
-                    <mass>0</mass>
+                    <mass>0.00001</mass>
                     <inertia>
                         <ixx>0.0003358</ixx>
                         <iyy>0.0003358</iyy>
@@ -267,7 +267,7 @@
                     <transparency>0.5</transparency>
                 </visual>
                 <inertial>
-                    <mass>0</mass>
+                    <mass>0.00001</mass>
                     <inertia>
                         <ixx>0.0003358</ixx>
                         <iyy>0.0003358</iyy>
@@ -321,7 +321,7 @@
                     <transparency>0.5</transparency>
                 </visual>
                 <inertial>
-                    <mass>0</mass>
+                    <mass>0.00001</mass>
                     <inertia>
                         <ixx>0.0003358</ixx>
                         <iyy>0.0003358</iyy>
@@ -375,7 +375,7 @@
                     <transparency>0.5</transparency>
                 </visual>
                 <inertial>
-                    <mass>0</mass>
+                    <mass>0.00001</mass>
                     <inertia>
                         <ixx>0.0003358</ixx>
                         <iyy>0.0003358</iyy>
@@ -408,7 +408,7 @@
                     </material>
                 </visual>
                 <inertial>
-                    <mass>0</mass>
+                    <mass>0.00001</mass>
                     <inertia>
                         <ixx>0.0003358</ixx>
                         <iyy>0.0003358</iyy>

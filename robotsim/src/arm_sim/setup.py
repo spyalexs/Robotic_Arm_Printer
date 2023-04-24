@@ -16,6 +16,7 @@ setup(
         ('share/' + package_name, glob('launch/*launch.[pxy][yma]*')),
         ('share/' + package_name, glob('worlds/*')),
         ('share/' + package_name, glob('hcode/*')),
+        ('share/' + package_name, glob('Robot_Arm_Parts/*.fbx'))
     ],
     install_requires=['setuptools'],
     zip_safe=True,
