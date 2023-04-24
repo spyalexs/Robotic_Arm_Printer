@@ -54,7 +54,7 @@
         </model>
 
         <model name="printerArm">
-            <pose>0 0 0.05 0 0 0</pose>
+            <pose>0 0 0.5 0 0 0</pose>
             <link name="base_link">
                 <collision name='base_link_collision_0'>
                     <laser_retro>0</laser_retro>
@@ -63,7 +63,7 @@
                     <geometry>
                         <cylinder>
                             <radius>0.5</radius>
-                            <length>0.1</length>
+                            <length>1</length>
                         </cylinder>
                     </geometry>
                 </collision>
@@ -79,7 +79,7 @@
                     <geometry>
                         <cylinder>
                             <radius>0.5</radius>
-                            <length>0.1</length>
+                            <length>1</length>
                         </cylinder>
                     </geometry>
                     <material>
@@ -159,7 +159,7 @@
                     <transparency>0.5</transparency>
                 </visual>
                 <inertial>
-                    <mass>0.1</mass>
+                    <mass>0</mass>
                     <inertia>
                         <ixx>0.0003358</ixx>
                         <iyy>0.0003358</iyy>
@@ -213,7 +213,7 @@
                     <transparency>0.5</transparency>
                 </visual>
                 <inertial>
-                    <mass>0.1</mass>
+                    <mass>0</mass>
                     <inertia>
                         <ixx>0.0003358</ixx>
                         <iyy>0.0003358</iyy>
@@ -267,7 +267,7 @@
                     <transparency>0.5</transparency>
                 </visual>
                 <inertial>
-                    <mass>0.1</mass>
+                    <mass>0</mass>
                     <inertia>
                         <ixx>0.0003358</ixx>
                         <iyy>0.0003358</iyy>
@@ -277,7 +277,15 @@
             </link>
 
             <link name="link4">
-                <pose relative_to="joint4">0 0 0.25 0 0 0</pose>
+                <pose relative_to="joint4">0 0 0.1 0 0 0</pose>
+                <collision name="link4_collision_0">
+                    <geometry>
+                        <cylinder>
+                            <radius>0.1</radius>
+                            <length>0.2</length>
+                        </cylinder>
+                    </geometry>
+                </collision>
                 <collision name="link4_collision_1">
                     <geometry>
                         <sphere>
@@ -285,8 +293,21 @@
                         </sphere>
                     </geometry>
                 </collision>
+                <visual name="link4_visual_0">
+                    <geometry>
+                        <cylinder>
+                            <radius>0.1</radius>
+                            <length>0.2</length>
+                        </cylinder>
+                    </geometry>
+                    <material>
+                        <ambient>0.5 0 0 1</ambient>
+                        <diffuse>0.8 0 0 1</diffuse>
+                        <specular>0.8 0 0 1</specular>
+                    </material>
+                </visual>
                 <visual name="link4_visual_1">
-                    <pose relative_to="joint4">0 0 0 0 0 0</pose>
+                    <pose relative_to="joint4">0 0 0.2 0 0 0</pose>
                     <geometry>
                         <sphere>
                             <radius>0.15</radius>
@@ -297,10 +318,10 @@
                         <diffuse>0.8 0.8 0.8 1</diffuse>
                         <specular>0.8 0.8 0.8 1</specular>
                     </material>
-                    <transparency>1</transparency>
+                    <transparency>0.5</transparency>
                 </visual>
                 <inertial>
-                    <mass>0.1</mass>
+                    <mass>0</mass>
                     <inertia>
                         <ixx>0.0003358</ixx>
                         <iyy>0.0003358</iyy>
@@ -310,7 +331,7 @@
             </link>
 
             <link name="link5">
-                <pose relative_to="joint5">0 0 0 0 0 0</pose>
+                <pose relative_to="joint5">0 0 0.25 0 0 0</pose>
                 <collision name="link3_collision_0">
                     <geometry>
                         <cylinder>
@@ -340,7 +361,7 @@
                     </material>
                 </visual>
                 <visual name="link3_visual_1">
-                    <pose relative_to="joint5">0 0 0 0 0 0</pose>
+                    <pose relative_to="joint5">0 0 0.5 0 0 0</pose>
                     <geometry>
                         <sphere>
                             <radius>0.15</radius>
@@ -354,7 +375,7 @@
                     <transparency>0.5</transparency>
                 </visual>
                 <inertial>
-                    <mass>0.1</mass>
+                    <mass>0</mass>
                     <inertia>
                         <ixx>0.0003358</ixx>
                         <iyy>0.0003358</iyy>
@@ -368,26 +389,26 @@
                 <collision name="link3_collision_0">
                     <geometry>
                         <cylinder>
-                            <radius>0.01</radius>
-                            <length>0.1</length>
+                            <radius>0.05</radius>
+                            <length>0.5</length>
                         </cylinder>
                     </geometry>
                 </collision>
                 <visual name="link3_visual_0">
                     <geometry>
                         <cylinder>
-                            <radius>0.01</radius>
-                            <length>0.1</length>
+                            <radius>0.05</radius>
+                            <length>0.5</length>
                         </cylinder>
                     </geometry>
                     <material>
-                        <ambient>0.5 0 0 1</ambient>
-                        <diffuse>0.8 0 0 1</diffuse>
-                        <specular>0.8 0 0 1</specular>
+                        <ambient>0 0.5 0 1</ambient>
+                        <diffuse>0 0.8 0 1</diffuse>
+                        <specular>0 0.8 0 1</specular>
                     </material>
                 </visual>
                 <inertial>
-                    <mass>0.1</mass>
+                    <mass>0</mass>
                     <inertia>
                         <ixx>0.0003358</ixx>
                         <iyy>0.0003358</iyy>
@@ -397,7 +418,7 @@
             </link>
 
             <joint name="joint1" type="revolute">
-                <pose relative_to="base_link">0 0 0.1 0 0 0</pose>
+                <pose relative_to="base_link">0 0 3 0 0 0</pose>
                 <parent>base_link</parent>
                 <child>link1</child>
                 <axis>
@@ -445,7 +466,7 @@
             </joint>
 
             <joint name="joint5" type="revolute">
-                <pose relative_to="link4">0 0 0 0 0 0</pose>
+                <pose relative_to="link4">0 0 0.1 0 0 0</pose>
                 <parent>link4</parent>
                 <child>link5</child>
                 <axis>
@@ -457,7 +478,7 @@
             </joint>
 
             <joint name="joint6" type="revolute">
-                <pose relative_to="link4">0 0 0.25 0 0 0</pose>
+                <pose relative_to="link5">0 0 0.25 0 0 0</pose>
                 <parent>link5</parent>
                 <child>link6</child>
                 <axis>
@@ -473,8 +494,8 @@
                 name="gz::sim::systems::JointTrajectoryController">
                 <joint_name>joint1</joint_name>
                 <initial_position>0</initial_position>
-                <position_p_gain>300</position_p_gain>
-                <position_i_gain>0.5</position_i_gain>
+                <position_p_gain>0.5</position_p_gain>
+                <position_i_gain>0</position_i_gain>
                 <position_d_gain>0.5</position_d_gain>
                 <position_i_min>-1</position_i_min>
                 <position_i_max>1</position_i_max>
@@ -483,8 +504,8 @@
 
                 <joint_name>joint2</joint_name>
                 <initial_position>0</initial_position>
-                <position_p_gain>300</position_p_gain>
-                <position_i_gain>0.2</position_i_gain>
+                <position_p_gain>0.5</position_p_gain>
+                <position_i_gain>0</position_i_gain>
                 <position_d_gain>0.5</position_d_gain>
                 <position_i_min>-1</position_i_min>
                 <position_i_max>1</position_i_max>
@@ -493,8 +514,8 @@
 
                 <joint_name>joint3</joint_name>
                 <initial_position>0</initial_position>
-                <position_p_gain>300</position_p_gain>
-                <position_i_gain>0.2</position_i_gain>
+                <position_p_gain>0.5</position_p_gain>
+                <position_i_gain>0</position_i_gain>
                 <position_d_gain>0.5</position_d_gain>
                 <position_i_min>-1</position_i_min>
                 <position_i_max>1</position_i_max>
@@ -503,8 +524,8 @@
 
                 <joint_name>joint4</joint_name>
                 <initial_position>0</initial_position>
-                <position_p_gain>300</position_p_gain>
-                <position_i_gain>0.2</position_i_gain>
+                <position_p_gain>0.5</position_p_gain>
+                <position_i_gain>0</position_i_gain>
                 <position_d_gain>0.5</position_d_gain>
                 <position_i_min>-1</position_i_min>
                 <position_i_max>1</position_i_max>
@@ -513,8 +534,8 @@
 
                 <joint_name>joint5</joint_name>
                 <initial_position>0</initial_position>
-                <position_p_gain>300</position_p_gain>
-                <position_i_gain>0.2</position_i_gain>
+                <position_p_gain>0.5</position_p_gain>
+                <position_i_gain>0</position_i_gain>
                 <position_d_gain>0.5</position_d_gain>
                 <position_i_min>-1</position_i_min>
                 <position_i_max>1</position_i_max>
@@ -523,8 +544,8 @@
 
                 <joint_name>joint6</joint_name>
                 <initial_position>0</initial_position>
-                <position_p_gain>300</position_p_gain>
-                <position_i_gain>0.2</position_i_gain>
+                <position_p_gain>0.5</position_p_gain>
+                <position_i_gain>0</position_i_gain>
                 <position_d_gain>0.5</position_d_gain>
                 <position_i_min>-1</position_i_min>
                 <position_i_max>1</position_i_max>
