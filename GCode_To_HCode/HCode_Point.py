@@ -34,7 +34,7 @@ class HCodePoint:
 
         #new orgin for the sake of Ikin
         x = x + 4
-        y = y + 6
+        y = y 
         z = z + 4
         return x, y, z
     
