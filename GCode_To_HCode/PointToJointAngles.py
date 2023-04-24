@@ -187,11 +187,31 @@ def runIKin(ScrewList, HomeMatrix, target, guess):
                 break
 
         if(running_error < tol):
+            angles_limit = 2 * math.pi /3 # rotation limit on angles
+            
             solved = True
+
+            if (current_guess[1] > angles_limit and current_guess[1] < math.pi * 2 - angles_limit):
+                solved = False
+                current_guess = np.array([random() * 2 * math.pi, random() * 2 * math.pi,random() * 2 * math.pi, random() * 2 * math.pi,random() * 2 * math.pi, random() * 2 * math.pi])
+
+            if (current_guess[2] > angles_limit and current_guess[2] < math.pi * 2 - angles_limit):
+                solved = False   
+                current_guess = np.array([random() * 2 * math.pi, random() * 2 * math.pi,random() * 2 * math.pi, random() * 2 * math.pi,random() * 2 * math.pi, random() * 2 * math.pi])
+         
+            if (current_guess[3] > angles_limit and current_guess[3] < math.pi * 2 - angles_limit):
+                solved = False              
+                current_guess = np.array([random() * 2 * math.pi, random() * 2 * math.pi,random() * 2 * math.pi, random() * 2 * math.pi,random() * 2 * math.pi, random() * 2 * math.pi])
+         
+            if (current_guess[5] > angles_limit and current_guess[5] < math.pi * 2 - angles_limit):
+                solved = False
+                current_guess = np.array([random() * 2 * math.pi, random() * 2 * math.pi,random() * 2 * math.pi, random() * 2 * math.pi,random() * 2 * math.pi, random() * 2 * math.pi])
+
         else:
             #print(running_error)
             current_guess = np.array([random() * 2 * math.pi, random() * 2 * math.pi,random() * 2 * math.pi, random() * 2 * math.pi,random() * 2 * math.pi, random() * 2 * math.pi])
-            #print(current_guess)
+        
+    print(current_guess)
 
 
     return current_guess, runFKin(ScrewList, HomeMatrix, current_guess)
